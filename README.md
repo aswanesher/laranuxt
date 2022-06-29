@@ -1,0 +1,2 @@
+# laranuxt
+ Laravel Nuxtjs App
