@@ -18,7 +18,7 @@
             <router-link :to="{name: 'home'}" class="nav-link">HOME</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about">TENTANG</router-link>
+            <router-link class="nav-link" to="/users">DATA AKUN</router-link>
           </li>
           <li>
             <router-link v-if="!loggedIn"  class="nav-link" to="/login">LOGIN</router-link>
