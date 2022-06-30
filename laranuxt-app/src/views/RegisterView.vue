@@ -5,6 +5,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-8 mx-auto">
                     <div class="card border-1 rounded-3 my-5">
                         <div class="card-body p-4 p-sm-5">
+                            <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
                             <div v-if="isValid && $v.user.email.$error" class="mt-2 alert alert-danger">
                                 <span v-if="!$v.user.email.required">Kolom email wajib diisi</span>
                                 <span v-if="!$v.user.email.email">Email tidak valid</span>
