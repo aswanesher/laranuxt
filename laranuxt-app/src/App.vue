@@ -41,13 +41,13 @@ export default {
             user: []
         }
     },
-    /* created() {
+    created() {
         axios.get('http://localhost:8000/api/user', {headers: {'Authorization': 'Bearer '+this.token}})
         .then(response => {
             console.log(response)
             this.user = response.data.data
         })
-    }, */
+    },
     methods: {
         getLoggedIn() {
             this.loggedIn = localStorage.getItem("loggedIn")
@@ -66,12 +66,7 @@ export default {
         $route: {
             immediate: true,
             handler() {
-                this.getLoggedIn(),
-                axios.get('http://localhost:8000/api/user', {headers: {'Authorization': 'Bearer '+this.token}})
-                .then(response => {
-                    console.log(response)
-                    this.user = response.data.data
-                })
+                this.getLoggedIn()
             }
         }
     }

@@ -49,13 +49,15 @@ class UserController extends Controller
 
             if(!Auth::attempt($credentials)) {
                 return ResponseFormatter::error([
-                    'message' => 'Unauthorized'
-                ], 'Authentication Failed', 500);
+                    'message' => 'Unauthorized',
+                ], 'Authentication Failed', 201);
             }
 
             $user = User::where('email', $request->email)->first();
             if(!Hash::check($request->password, $user->password, [])) {
-                throw new \Exception('Invalid Credentials');
+                return ResponseFormatter::error([
+                    'message' => 'Unauthorized'
+                ], 'Authentication Failed', 201);
             }
 
             $tokenResult = $user->createToken('authToken')->plainTextToken;
@@ -93,7 +95,7 @@ class UserController extends Controller
             $request->validate([
                 'name' => ['required', 'string', 'min:5', 'max:255'],
                 'email' => ['required', 'string', 'email', 'unique:users'],
-                'password' => ['required', 'string'],
+                'password' => ['required', 'string', "min:2"],
                 'phone' => ['required', 'numeric', 'min:7']
             ]);
 
