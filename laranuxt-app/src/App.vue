@@ -20,6 +20,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/users">DATA AKUN</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/member">DATA MEMBER</router-link>
+          </li>
           <li>
             <router-link v-if="!loggedIn"  class="nav-link" to="/login">LOGIN</router-link>
             <span v-else class="nav-link" @click="logout" style="cursor:pointer">LOGOUT</span>

@@ -9,6 +9,7 @@ import 'jquery/dist/jquery.min'
 import 'popper.js/dist/popper.min'
 import 'bootstrap/dist/js/bootstrap.min'
 
+axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*'
 Vue.config.productionTip = false
 
 //set credential axios with true
